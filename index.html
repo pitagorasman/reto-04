@@ -177,6 +177,7 @@
               <tr>
                 <th class="px-4 py-3 font-semibold">Sede / Refugio</th>
                 <th class="px-4 py-3 font-semibold">Región</th>
+                <th class="px-4 py-3 font-semibold">Fecha de Entrega</th>
                 <th class="px-4 py-3 font-semibold">Dirección Exacta</th>
                 <th class="px-4 py-3 font-semibold text-right">Kits Entregados</th>
                 <th class="px-4 py-3 font-semibold text-right">% del Total</th>
@@ -186,6 +187,49 @@
             <tbody id="tableBody" class="divide-y divide-slate-100"></tbody>
             <tfoot id="tableFoot" class="bg-slate-50 font-bold text-slate-900 border-t border-slate-200"></tfoot>
           </table>
+        </div>
+      </div>
+
+      <!-- Kit Contents Section -->
+      <div class="bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-sm print-break">
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-4">
+          <div>
+            <h2 class="text-base font-bold text-slate-900">¿Qué incluye cada kit?</h2>
+            <p class="text-xs text-slate-500">Materiales útiles desde el primer día, con cartuchera reutilizable fabricada en Venezuela.</p>
+          </div>
+          <span class="text-[11px] px-2.5 py-1 rounded-lg bg-teal-50 text-teal-800 border border-teal-200 font-semibold self-start sm:self-auto">
+            Escala: 7.200 lápices de colores · 2.400 lápices HB · 600 blocs · 600 cartucheras · 600 QR
+          </span>
+        </div>
+        <div id="kitContentsGrid" class="grid grid-cols-2 sm:grid-cols-4 gap-3"></div>
+      </div>
+
+      <!-- Timeline & NOVA Operations Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 print-break">
+        <!-- Timeline -->
+        <div class="bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-sm">
+          <div class="mb-4">
+            <h2 class="text-base font-bold text-slate-900">Línea del Tiempo: De una idea a 600 kits</h2>
+            <p class="text-xs text-slate-500">Julio a noviembre de 2026: recepción de materiales, producción local, armado y entregas.</p>
+          </div>
+          <ol id="timelineList" class="relative border-l-2 border-teal-200 ml-3 space-y-4"></ol>
+        </div>
+
+        <!-- NOVA Local Operation & QR Privacy -->
+        <div class="space-y-6">
+          <div class="bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-sm">
+            <div class="mb-3">
+              <span class="text-[11px] font-bold uppercase tracking-wider text-indigo-700">Operación Voluntaria</span>
+              <h2 class="text-base font-bold text-slate-900">NOVA · Movimiento Estudiantil UCV (@NOVAFISICAUCV)</h2>
+              <p class="text-xs text-slate-500">Facultad de Ciencias y Escuela de Física — trabajo voluntario sin monetización en balance.</p>
+            </div>
+            <div id="novaStepsGrid" class="grid grid-cols-1 sm:grid-cols-2 gap-3"></div>
+          </div>
+
+          <div class="bg-slate-900 text-white p-4 sm:p-5 rounded-2xl shadow-sm">
+            <h3 class="text-sm font-bold text-teal-300 mb-2">Protocolo de Dibujos y QR: Privacidad Primero</h3>
+            <ul id="qrPrivacyList" class="space-y-1.5 text-xs text-slate-200 list-disc pl-4"></ul>
+          </div>
         </div>
       </div>
 

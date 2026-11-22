@@ -2,7 +2,7 @@
   "proyecto": "Del kit al impacto — Reto 04 · CoAfina 2026",
   "organizacion": "Creative Commons Venezuela",
   "licencia_datos": "CC BY 4.0",
-  "fecha_corte": "2026-11-22",
+  "fecha_corte": "2026-11-15",
   "centro_operaciones": {
     "id": "ucv-ciencias",
     "nombre": "Facultad de Ciencias — UCV (Centro de Operaciones)",
@@ -31,7 +31,9 @@
       "lat": 10.50838,
       "lng": -66.93725,
       "entregados": 184,
-      "permisos": "Verificados"
+      "permisos": "Verificados",
+      "fecha_iso": "2026-10-08",
+      "fecha_entrega": "Jueves 08 oct 2026"
     },
     {
       "id": "polideportivo-jmv",
@@ -43,7 +45,9 @@
       "lat": 10.60013,
       "lng": -66.97062,
       "entregados": 171,
-      "permisos": "Verificados"
+      "permisos": "Verificados",
+      "fecha_iso": "2026-10-03",
+      "fecha_entrega": "Sábado 03 oct 2026"
     },
     {
       "id": "uen-republica-panama",
@@ -55,7 +59,9 @@
       "lat": 10.60188,
       "lng": -66.92612,
       "entregados": 129,
-      "permisos": "Verificados"
+      "permisos": "Verificados",
+      "fecha_iso": "2026-10-03",
+      "fecha_entrega": "Sábado 03 oct 2026"
     },
     {
       "id": "iglesia-universal-lg",
@@ -67,7 +73,9 @@
       "lat": 10.59425,
       "lng": -66.9525,
       "entregados": 25,
-      "permisos": "Verificados"
+      "permisos": "Verificados",
+      "fecha_iso": "2026-10-03",
+      "fecha_entrega": "Sábado 03 oct 2026"
     },
     {
       "id": "club-campo-golf",
@@ -79,7 +87,9 @@
       "lat": 10.61375,
       "lng": -66.8415,
       "entregados": 91,
-      "permisos": "Verificados"
+      "permisos": "Verificados",
+      "fecha_iso": "2026-11-14",
+      "fecha_entrega": "Sábado 14 nov 2026"
     }
   ],
   "galeria_ilustrada": [
@@ -173,5 +183,116 @@
       "titulo": "Estudiantes con sus kits",
       "descripcion": "Estudiantes recibiendo sus materiales educativos."
     }
+  ],
+  "kit_contenido": [
+    {
+      "cantidad": "1",
+      "item": "Bloc de dibujo",
+      "detalle": "20 hojas blancas"
+    },
+    {
+      "cantidad": "12",
+      "item": "Lápices de colores",
+      "detalle": "En su caja (7.200 en total)"
+    },
+    {
+      "cantidad": "4",
+      "item": "Lápices HB",
+      "detalle": "2.400 en total"
+    },
+    {
+      "cantidad": "1",
+      "item": "Sacapuntas",
+      "detalle": "630 adquiridos para el ciclo"
+    },
+    {
+      "cantidad": "1",
+      "item": "Borrador",
+      "detalle": "600 entregados"
+    },
+    {
+      "cantidad": "1",
+      "item": "Cartuchera",
+      "detalle": "Producción local en Venezuela"
+    },
+    {
+      "cantidad": "1",
+      "item": "Bolsa",
+      "detalle": "Kit organizado"
+    },
+    {
+      "cantidad": "1",
+      "item": "Invitación QR",
+      "detalle": "Única y voluntaria (~50 págs. recortadas)"
+    }
+  ],
+  "linea_tiempo": [
+    {
+      "fecha": "Julio 2026",
+      "titulo": "Diseño y planificación",
+      "detalle": "La propuesta inicial se ajustó hasta una meta realizable de 600 kits.",
+      "estado": "completado"
+    },
+    {
+      "fecha": "Agosto 2026",
+      "titulo": "Adquisición y fabricación local",
+      "detalle": "Se adquirieron los materiales y comenzó la producción local de 600 cartucheras reutilizables.",
+      "estado": "completado"
+    },
+    {
+      "fecha": "Septiembre 2026",
+      "titulo": "Armado y sistema QR en UCV",
+      "detalle": "Se verificaron insumos, se imprimieron y cortaron 600 códigos QR y se armaron los primeros 350 kits en la Facultad de Ciencias.",
+      "estado": "completado"
+    },
+    {
+      "fecha": "Octubre 2026",
+      "titulo": "600 armados · 509 entregados",
+      "detalle": "Con los 250 blocs finales se completó el lote; dos jornadas entregaron 325 kits en La Guaira (3 oct) y 184 en Caracas (8 oct).",
+      "estado": "completado"
+    },
+    {
+      "fecha": "14 Nov 2026",
+      "titulo": "Meta completa (600 / 600)",
+      "detalle": "Los 91 kits finales llegaron a Caraballeda (refugio del Campo de Golf), cerrando con cero pendientes.",
+      "estado": "completado"
+    },
+    {
+      "fecha": "30 Nov 2026",
+      "titulo": "Cierre de concurso y 10 kits ampliados",
+      "detalle": "Selección de 10 dibujos (sin primer ni último lugar) para recibir 10 kits ampliados y preparar el segundo ciclo.",
+      "estado": "proximo"
+    }
+  ],
+  "operacion_nova": {
+    "equipo": "NOVA · Movimiento Estudiantil UCV (Facultad de Ciencias y Escuela de Física)",
+    "pasos": [
+      {
+        "num": "01",
+        "titulo": "Recibir y verificar",
+        "detalle": "Contar cajas, lápices, blocs, cartucheras, borradores, sacapuntas y bolsas."
+      },
+      {
+        "num": "02",
+        "titulo": "Preparar 600 QR",
+        "detalle": "Imprimir unas 50 páginas, cortar cada código y mantener su carácter único."
+      },
+      {
+        "num": "03",
+        "titulo": "Armar 600 kits",
+        "detalle": "Organizar materiales, colocar la invitación QR y conciliar cada lote."
+      },
+      {
+        "num": "04",
+        "titulo": "Transportar y entregar",
+        "detalle": "Coordinar espacios, movilizar los lotes y acompañar las 3 jornadas."
+      }
+    ]
+  },
+  "privacidad_qr": [
+    "Participar nunca fue una condición para recibir el kit.",
+    "No se solicitan apellidos, escuela, dirección, documento ni fecha de nacimiento del niño.",
+    "La persona adulta puede tomar la foto en el momento o cargar una imagen existente.",
+    "Cada QR permite un solo envío y la publicación requiere una autorización separada."
   ]
 }

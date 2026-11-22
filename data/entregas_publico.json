@@ -1,0 +1,177 @@
+{
+  "proyecto": "Del kit al impacto — Reto 04 · CoAfina 2026",
+  "organizacion": "Creative Commons Venezuela",
+  "licencia_datos": "CC BY 4.0",
+  "fecha_corte": "2026-11-22",
+  "centro_operaciones": {
+    "id": "ucv-ciencias",
+    "nombre": "Facultad de Ciencias — UCV (Centro de Operaciones)",
+    "region": "Caracas",
+    "direccion": "Paseo Los Ilustres, Ciudad Universitaria de Caracas, Caracas 1040, Distrito Capital",
+    "lat": 10.48667,
+    "lng": -66.89083,
+    "armados": 600,
+    "rol": "Recepción de insumos, armado del 100% de los kits (600) y distribución."
+  },
+  "totales": {
+    "kits_armados": 600,
+    "kits_entregados": 600,
+    "saldo_inventario": 0,
+    "dibujos_recibidos": 60,
+    "kits_ampliados_por_asignar": 10
+  },
+  "sedes_entrega": [
+    {
+      "id": "fe-alegria-abraham-reyes",
+      "sede": "Colegio Fe y Alegría Abraham Reyes",
+      "tipo": "Centro Educativo",
+      "region": "Caracas",
+      "parroquia": "Parroquia 23 de Enero",
+      "direccion": "Zona Central, detrás del Bloque 29, Calle Cristo Rey, Parroquia 23 de Enero, Caracas 1030, Distrito Capital",
+      "lat": 10.50838,
+      "lng": -66.93725,
+      "entregados": 184,
+      "permisos": "Verificados"
+    },
+    {
+      "id": "polideportivo-jmv",
+      "sede": "Refugio Polideportivo José María Vargas",
+      "tipo": "Refugio",
+      "region": "La Guaira",
+      "parroquia": "Maiquetía (Parroquia Carlos Soublette)",
+      "direccion": "Avenida Soublette, Parroquia Carlos Soublette, Maiquetía 1161, Estado La Guaira",
+      "lat": 10.60013,
+      "lng": -66.97062,
+      "entregados": 171,
+      "permisos": "Verificados"
+    },
+    {
+      "id": "uen-republica-panama",
+      "sede": "Refugio Colegio UEN República de Panamá",
+      "tipo": "Refugio / Centro Educativo",
+      "region": "La Guaira",
+      "parroquia": "La Guaira",
+      "direccion": "Sector Avenida Soublette del Cardonal, frente a la Av. Soublette, La Guaira 1160, Estado La Guaira",
+      "lat": 10.60188,
+      "lng": -66.92612,
+      "entregados": 129,
+      "permisos": "Verificados"
+    },
+    {
+      "id": "iglesia-universal-lg",
+      "sede": "Refugio Iglesia Universal",
+      "tipo": "Refugio",
+      "region": "La Guaira",
+      "parroquia": "Maiquetía / La Guaira",
+      "direccion": "Calle San Sebastián esquina Calle Navarrete, Maiquetía 1161, Estado La Guaira",
+      "lat": 10.59425,
+      "lng": -66.9525,
+      "entregados": 25,
+      "permisos": "Verificados"
+    },
+    {
+      "id": "club-campo-golf",
+      "sede": "Refugio Club Campo de Golf",
+      "tipo": "Refugio",
+      "region": "La Guaira",
+      "parroquia": "Caraballeda",
+      "direccion": "Avenida José María España / Avenida Charama, Urbanización Caraballeda 1165, Estado La Guaira",
+      "lat": 10.61375,
+      "lng": -66.8415,
+      "entregados": 91,
+      "permisos": "Verificados"
+    }
+  ],
+  "galeria_ilustrada": [
+    {
+      "archivo": "./assets/ilustraciones/armado_mesa_qr.jpg",
+      "titulo": "Armado y rotulado QR (UCV)",
+      "descripcion": "Mesa de preparación de kits con códigos QR en Facultad de Ciencias."
+    },
+    {
+      "archivo": "./assets/ilustraciones/voluntaria_recorte_qr.jpg",
+      "titulo": "Etiquetado de trazabilidad",
+      "descripcion": "Voluntaria recortando etiquetas QR para control de entregas."
+    },
+    {
+      "archivo": "./assets/ilustraciones/equipo_armado_ucv.jpg",
+      "titulo": "Equipo en Facultad de Ciencias UCV",
+      "descripcion": "Voluntarios organizando los 600 kits en el centro de operaciones."
+    },
+    {
+      "archivo": "./assets/ilustraciones/voluntarios_empacando_ucv.jpg",
+      "titulo": "Empaque de lotes (UCV)",
+      "descripcion": "Preparación de bolsas individuales con útiles y libretas."
+    },
+    {
+      "archivo": "./assets/ilustraciones/etiquetas_qr_ucv.jpg",
+      "titulo": "Control de inventario QR",
+      "descripcion": "Preparación de códigos para seguimiento de cada kit."
+    },
+    {
+      "archivo": "./assets/ilustraciones/cajas_kits_empacados.jpg",
+      "titulo": "Cajas listas para despacho",
+      "descripcion": "Lotes sellados y clasificados para Caracas y La Guaira."
+    },
+    {
+      "archivo": "./assets/ilustraciones/entrega_carpa_01.jpg",
+      "titulo": "Entrega en refugio (La Guaira)",
+      "descripcion": "Voluntarios entregando kits educativos a familias y niños."
+    },
+    {
+      "archivo": "./assets/ilustraciones/equipo_voluntarios.jpg",
+      "titulo": "Equipo de logística en campo",
+      "descripcion": "Voluntarios organizando las mesas de entrega en refugio."
+    },
+    {
+      "archivo": "./assets/ilustraciones/entrega_carpa_02.jpg",
+      "titulo": "Distribución comunitaria",
+      "descripcion": "Jornada de entrega en carpa comunitaria."
+    },
+    {
+      "archivo": "./assets/ilustraciones/ninos_carpa_kits.jpg",
+      "titulo": "Explorando los kits en carpa",
+      "descripcion": "Niños y familias revisando sus cuadernos y colores."
+    },
+    {
+      "archivo": "./assets/ilustraciones/jovenes_revisando_kits.jpg",
+      "titulo": "Materiales de dibujo",
+      "descripcion": "Jóvenes estrenando sus libretas para el concurso de dibujo."
+    },
+    {
+      "archivo": "./assets/ilustraciones/mesa_kits_escuela.jpg",
+      "titulo": "Mesa de kits · UEN República de Panamá",
+      "descripcion": "Lotes clasificados y listos para los estudiantes."
+    },
+    {
+      "archivo": "./assets/ilustraciones/comunidad_republica_panama.jpg",
+      "titulo": "Complejo Educativo República de Panamá",
+      "descripcion": "Encuentro comunitario durante la entrega en La Guaira."
+    },
+    {
+      "archivo": "./assets/ilustraciones/entrega_general_panama.jpg",
+      "titulo": "Jornada en UEN República de Panamá",
+      "descripcion": "Entrega masiva verificada en el patio del plantel."
+    },
+    {
+      "archivo": "./assets/ilustraciones/fila_entrega_panama.jpg",
+      "titulo": "Distribución ordenada en plantel",
+      "descripcion": "Familias recibiendo sus kits educativos en La Guaira."
+    },
+    {
+      "archivo": "./assets/ilustraciones/entrega_bajo_arbol.jpg",
+      "titulo": "Jornada al aire libre",
+      "descripcion": "Entrega directa a familias en espacio abierto."
+    },
+    {
+      "archivo": "./assets/ilustraciones/bolsas_kits_detalle.jpg",
+      "titulo": "Detalle de los kits armados",
+      "descripcion": "Bolsas preparadas en la Facultad de Ciencias UCV."
+    },
+    {
+      "archivo": "./assets/ilustraciones/estudiantes_con_kits.jpg",
+      "titulo": "Estudiantes con sus kits",
+      "descripcion": "Estudiantes recibiendo sus materiales educativos."
+    }
+  ]
+}

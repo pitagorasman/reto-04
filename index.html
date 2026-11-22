@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Del kit al impacto — Reto 04 · CoAfina 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
+<body class="min-h-screen flex flex-col">
+
+  <!-- Toast Notification -->
+  <div id="toast" class="fixed bottom-4 right-4 z-50 hidden max-w-sm rounded-xl bg-slate-900 text-white px-4 py-3 shadow-lg text-sm font-medium transition-opacity duration-300"></div>
+
+  <!-- Top Header -->
+  <header class="bg-slate-900 text-white sticky top-0 z-30 shadow-md no-print">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-teal-500/20 border border-teal-400/40 flex items-center justify-center text-teal-300 font-extrabold text-lg shrink-0">
+          R4
+        </div>
+        <div>
+          <div class="flex items-center gap-2 flex-wrap">
+            <span class="text-xs font-semibold uppercase tracking-wider text-teal-300">Reto 04 · Creative Commons Venezuela</span>
+            <span class="text-[11px] px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 font-semibold">100% Entregado (600/600)</span>
+          </div>
+          <h1 class="text-base sm:text-lg font-bold leading-tight">Del kit al impacto: Datos Abiertos Educativos</h1>
+        </div>
+      </div>
+
+      <!-- Mode Switcher (Privacy Boundary) -->
+      <div class="flex bg-slate-800 p-1 rounded-xl border border-slate-700 self-start sm:self-auto">
+        <button id="btnTabPublic" type="button" class="px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition bg-teal-500 text-slate-950 shadow">
+          Panel Público
+        </button>
+        <button id="btnTabJury" type="button" class="px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition text-slate-300 hover:text-white">
+          Jurado (Restringido)
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Privacy Boundary Banner -->
+  <div id="privacyBanner" class="bg-teal-50 border-b border-teal-200 px-4 py-2 text-xs text-teal-900">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
+      <p id="privacyText" class="font-medium">
+        <span class="inline-block w-2 h-2 rounded-full bg-teal-600 mr-1.5"></span>
+        <strong>Límite de Privacidad · Entorno Público:</strong> Muestra totales conciliados (600/600), sedes verificadas e ilustraciones estilizadas para proteger identidades.
+      </p>
+      <span class="text-[11px] text-teal-700 font-semibold shrink-0">Licencia Abierta: CC BY 4.0</span>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <main class="flex-1 max-w-6xl w-full mx-auto px-4 py-6 space-y-6">
+
+    <!-- ==================== VIEW 1: PUBLIC DASHBOARD ==================== -->
+    <section id="viewPublic" class="space-y-6">
+
+      <!-- Operations Center Callout (UCV Facultad de Ciencias) -->
+      <div class="bg-gradient-to-r from-slate-900 to-teal-900 text-white p-4 sm:p-5 rounded-2xl shadow-sm flex flex-col md:flex-row md:items-center md:justify-between gap-4 print-break">
+        <div class="space-y-1">
+          <div class="flex items-center gap-2 flex-wrap">
+            <span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-teal-400 text-slate-950 uppercase">Centro de Operaciones</span>
+            <span class="text-xs text-teal-200 font-medium">100% de los kits armados aquí (600 / 600)</span>
+          </div>
+          <h2 class="text-base sm:text-lg font-bold">Facultad de Ciencias — Universidad Central de Venezuela (UCV)</h2>
+          <p class="text-xs sm:text-sm text-slate-200">
+            Sede central para la recepción de insumos, armado completo y logística de distribución hacia Caracas y La Guaira.
+          </p>
+          <p class="text-xs text-teal-300 font-medium">
+            Dirección: Paseo Los Ilustres, Ciudad Universitaria de Caracas, Caracas 1040, Distrito Capital.
+          </p>
+        </div>
+        <button id="btnFocusUCV" type="button" class="px-3.5 py-2 rounded-xl text-xs font-semibold bg-white/10 hover:bg-white/20 border border-white/20 text-white transition shrink-0 self-start md:self-center no-print">
+          Ver en el mapa
+        </button>
+      </div>
+
+      <!-- Controls & Export Bar -->
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3 bg-white p-4 rounded-2xl border border-slate-200 shadow-sm no-print">
+        <div class="flex items-center gap-2 flex-wrap">
+          <span class="text-xs font-semibold uppercase tracking-wide text-slate-500 mr-1">Filtrar región:</span>
+          <button type="button" data-region="Todas" class="region-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-white">Todas (5 sedes)</button>
+          <button type="button" data-region="Caracas" class="region-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200">Caracas (184)</button>
+          <button type="button" data-region="La Guaira" class="region-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200">La Guaira (416)</button>
+        </div>
+        <div class="flex items-center gap-2 flex-wrap">
+          <button id="btnExportCSV" type="button" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-teal-600 text-white hover:bg-teal-700 transition">
+            ↓ CSV Público
+          </button>
+          <button id="btnExportJSON" type="button" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-white hover:bg-slate-900 transition">
+            ↓ JSON Abierto
+          </button>
+          <button id="btnPrintReport" type="button" class="px-3 py-1.5 rounded-lg text-xs font-semibold border border-slate-300 text-slate-700 hover:bg-slate-50 transition">
+            Imprimir Informe
+          </button>
+        </div>
+      </div>
+
+      <!-- KPI Cards -->
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 print-break">
+        <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm">
+          <p class="text-xs font-semibold text-slate-500 uppercase">Kits Armados</p>
+          <p id="kpiArmados" class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">600</p>
+          <p class="text-xs text-slate-500 mt-1">100% en Fac. Ciencias UCV</p>
+        </div>
+        <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm">
+          <p class="text-xs font-semibold text-teal-700 uppercase">Kits Entregados</p>
+          <p id="kpiEntregados" class="text-2xl sm:text-3xl font-extrabold text-teal-600 mt-1">600</p>
+          <p id="kpiPorcentaje" class="text-xs text-teal-700 font-medium mt-1">100.0% completado en 5 sedes</p>
+        </div>
+        <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm">
+          <p class="text-xs font-semibold text-emerald-700 uppercase">Saldo en Inventario</p>
+          <p id="kpiSaldo" class="text-2xl sm:text-3xl font-extrabold text-emerald-600 mt-1">0</p>
+          <p class="text-xs text-slate-500 mt-1">Conciliado (Armados - Entregados)</p>
+        </div>
+        <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm">
+          <p class="text-xs font-semibold text-indigo-700 uppercase">Dibujos Recibidos</p>
+          <p id="kpiDibujos" class="text-2xl sm:text-3xl font-extrabold text-indigo-600 mt-1">60</p>
+          <p class="text-xs text-slate-500 mt-1">10 kits ampliados por asignar</p>
+        </div>
+      </div>
+
+      <!-- Map & Chart Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 print-break">
+        <!-- Interactive Map -->
+        <div class="bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-sm flex flex-col">
+          <div class="flex items-start justify-between gap-2 mb-3">
+            <div>
+              <h2 class="text-base font-bold text-slate-900">Mapa Interactivo de Sedes y Operaciones</h2>
+              <p class="text-xs text-slate-500">Haz clic en cada marcador para ver la dirección exacta, tipo de sede y kits entregados.</p>
+            </div>
+            <div class="flex items-center gap-1.5 shrink-0 text-[11px] font-semibold">
+              <span class="px-2 py-0.5 rounded bg-indigo-50 text-indigo-700 border border-indigo-200">UCV Hub</span>
+              <span class="px-2 py-0.5 rounded bg-teal-50 text-teal-700 border border-teal-200">5 Sedes</span>
+            </div>
+          </div>
+          <div id="safeMap" class="w-full rounded-xl border border-slate-200 overflow-hidden" style="height: 330px;"></div>
+        </div>
+
+        <!-- Distribution Chart -->
+        <div class="bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-sm flex flex-col">
+          <div class="flex items-start justify-between gap-2 mb-3">
+            <div>
+              <h2 class="text-base font-bold text-slate-900">Distribución Verificada por Sede</h2>
+              <p class="text-xs text-slate-500">Total de 600 kits entregados entre Caracas (184) y La Guaira (416).</p>
+            </div>
+            <span class="text-[11px] px-2 py-0.5 rounded-md bg-emerald-50 text-emerald-700 border border-emerald-200 font-semibold shrink-0">Cuadre 100%</span>
+          </div>
+          <div class="relative h-72 w-full">
+            <canvas id="reconciliationChart"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reconciliation Table with Exact Addresses -->
+      <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden print-break">
+        <div class="p-4 sm:p-5 border-b border-slate-100 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+          <div>
+            <h2 class="text-base font-bold text-slate-900">Detalle de Entregas por Sede y Dirección</h2>
+            <p class="text-xs text-slate-500">Todos los lotes fueron despachados desde la Facultad de Ciencias UCV. Haz clic en una fila para ubicarla en el mapa.</p>
+          </div>
+          <span class="text-xs font-semibold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-lg self-start sm:self-auto">
+            ✓ Conciliación final: 600 / 600 entregados
+          </span>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs sm:text-sm">
+            <thead class="bg-slate-50 text-slate-600 uppercase text-[11px]">
+              <tr>
+                <th class="px-4 py-3 font-semibold">Sede / Refugio</th>
+                <th class="px-4 py-3 font-semibold">Región</th>
+                <th class="px-4 py-3 font-semibold">Dirección Exacta</th>
+                <th class="px-4 py-3 font-semibold text-right">Kits Entregados</th>
+                <th class="px-4 py-3 font-semibold text-right">% del Total</th>
+                <th class="px-4 py-3 font-semibold">Permisos</th>
+              </tr>
+            </thead>
+            <tbody id="tableBody" class="divide-y divide-slate-100"></tbody>
+            <tfoot id="tableFoot" class="bg-slate-50 font-bold text-slate-900 border-t border-slate-200"></tfoot>
+          </table>
+        </div>
+      </div>
+
+      <!-- Illustrated Community Gallery -->
+      <div class="bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-sm print-break">
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-4">
+          <div>
+            <h2 class="text-base font-bold text-slate-900">Galería Ilustrada de Entregas (Protección de Identidad)</h2>
+            <p class="text-xs text-slate-500">Registro visual convertido a ilustración artística a lápices de color para documentar el impacto comunitario cuidando la privacidad.</p>
+          </div>
+          <span class="text-[11px] px-2.5 py-1 rounded-lg bg-indigo-50 text-indigo-700 border border-indigo-200 font-semibold self-start sm:self-auto">18 Ilustraciones</span>
+        </div>
+        <div id="galleryGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"></div>
+      </div>
+
+    </section>
+
+    <!-- ==================== VIEW 2: RESTRICTED JURY FLOW ==================== -->
+    <section id="viewJury" class="hidden space-y-6">
+
+      <!-- Jury Header & Export -->
+      <div class="bg-white p-4 sm:p-5 rounded-2xl border border-amber-200 shadow-sm flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="px-2 py-0.5 rounded-md text-[11px] font-bold bg-amber-100 text-amber-900 uppercase">Entorno Restringido</span>
+            <span class="text-xs text-slate-500">60 dibujos recibidos · Prototipo con ejemplos sintéticos anónimos</span>
+          </div>
+          <h2 class="text-lg font-bold text-slate-900 mt-1">Flujo de Jurado Humano: Selección de 10 Kits Ampliados</h2>
+          <p class="text-xs text-slate-600 mt-0.5">Evalúa cada dibujo anónimo con la rúbrica de 3 criterios (máx. 15 pts). Las decisiones quedan registradas en una bitácora trazable.</p>
+        </div>
+        <div class="flex items-center gap-2 shrink-0 flex-wrap">
+          <label class="text-xs font-semibold text-slate-600">
+            Jurado activo:
+            <select id="juryMemberSelect" class="ml-1 rounded-lg border border-slate-300 px-2.5 py-1.5 text-xs font-semibold bg-white">
+              <option value="Jurado-A (Educación)">Jurado-A (Educación)</option>
+              <option value="Jurado-B (Arte Comunitario)">Jurado-B (Arte Comunitario)</option>
+              <option value="Jurado-C (CC Venezuela)">Jurado-C (CC Venezuela)</option>
+            </select>
+          </label>
+          <button id="btnExportActa" type="button" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-amber-600 text-white hover:bg-amber-700 transition">
+            ↓ Acta Trazable (JSON)
+          </button>
+        </div>
+      </div>
+
+      <!-- Two-column Jury Workspace -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+
+        <!-- Left: Synthetic Drawings & Rubric Evaluator -->
+        <div class="lg:col-span-7 space-y-4">
+          <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm">
+            <div class="flex items-center justify-between mb-3">
+              <h3 class="text-sm font-bold text-slate-900">1. Dibujos Anónimos (12 Ejemplos Sintéticos de los 60 recibidos)</h3>
+              <span id="evaluatedCounter" class="text-xs font-semibold text-indigo-700 bg-indigo-50 px-2.5 py-0.5 rounded-full">12 / 12 con evaluación base</span>
+            </div>
+            <div id="drawingsGrid" class="grid grid-cols-2 sm:grid-cols-3 gap-3"></div>
+          </div>
+
+          <!-- Active Evaluation Card -->
+          <div class="bg-white p-4 sm:p-5 rounded-2xl border border-indigo-200 shadow-sm space-y-4">
+            <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+              <div>
+                <span class="text-[11px] font-bold uppercase text-indigo-600">Evaluando ahora</span>
+                <h3 id="evalTitle" class="text-base font-bold text-slate-900">DIB-S01 — Mi escuela solar</h3>
+              </div>
+              <span id="evalTotalBadge" class="text-sm font-extrabold px-3 py-1 rounded-xl bg-indigo-600 text-white">14 / 15 pts</span>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              <div class="bg-slate-50 p-3 rounded-xl border border-slate-200">
+                <div class="flex justify-between text-xs font-semibold mb-1">
+                  <span>Creatividad y color</span>
+                  <span id="valC1" class="text-indigo-700">5</span>
+                </div>
+                <input id="rangeC1" type="range" min="1" max="5" value="5" class="w-full accent-indigo-600" />
+              </div>
+              <div class="bg-slate-50 p-3 rounded-xl border border-slate-200">
+                <div class="flex justify-between text-xs font-semibold mb-1">
+                  <span>Mensaje educativo</span>
+                  <span id="valC2" class="text-indigo-700">5</span>
+                </div>
+                <input id="rangeC2" type="range" min="1" max="5" value="5" class="w-full accent-indigo-600" />
+              </div>
+              <div class="bg-slate-50 p-3 rounded-xl border border-slate-200">
+                <div class="flex justify-between text-xs font-semibold mb-1">
+                  <span>Expresión y detalle</span>
+                  <span id="valC3" class="text-indigo-700">4</span>
+                </div>
+                <input id="rangeC3" type="range" min="1" max="5" value="4" class="w-full accent-indigo-600" />
+              </div>
+            </div>
+
+            <div>
+              <label for="evalNote" class="block text-xs font-semibold text-slate-700 mb-1">Justificación trazable del jurado</label>
+              <input id="evalNote" type="text" placeholder="Ej. Uso expresivo del color y mensaje claro sobre aprender en comunidad." class="w-full rounded-xl border border-slate-300 px-3 py-2 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+            </div>
+
+            <div class="flex justify-end">
+              <button id="btnSaveVote" type="button" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-indigo-600 text-white hover:bg-indigo-700 transition shadow-sm">
+                Guardar Evaluación en Bitácora
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Top 10 Ranking & Traceable Audit Log -->
+        <div class="lg:col-span-5 space-y-4">
+          <div class="bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-sm">
+            <div class="flex items-center justify-between mb-3">
+              <h3 class="text-sm font-bold text-slate-900">2. Selección Top 10 (Kit Ampliado)</h3>
+              <span class="text-[11px] font-semibold px-2 py-0.5 rounded bg-emerald-100 text-emerald-800">Corte Top 10</span>
+            </div>
+            <div id="top10List" class="space-y-2 max-h-80 overflow-y-auto pr-1"></div>
+          </div>
+
+          <div class="bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-sm">
+            <h3 class="text-sm font-bold text-slate-900 mb-2">3. Bitácora de Decisiones Trazables</h3>
+            <p class="text-[11px] text-slate-500 mb-3">Cada cambio de puntaje genera un registro inmutable con fecha, jurado y código anónimo.</p>
+            <div id="auditLog" class="space-y-2 max-h-60 overflow-y-auto text-xs"></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-white border-t border-slate-200 py-4 px-4 text-center text-xs text-slate-500 mt-8">
+    Reto 04 "Del kit al impacto" · CoAfina 2026 · Armado: Facultad de Ciencias UCV · Datos públicos bajo CC BY 4.0 · Código bajo licencia MIT.
+  </footer>
+
+  <script src="./js/app.js"></script>
+</body>
+</html>

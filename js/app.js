@@ -11,67 +11,81 @@ const FALLBACK_DATA = {
     rol: 'Recepción de insumos, armado del 100% de los kits (600) y distribución.'
   },
   sedes_entrega: [
-    {
-      id: 'fe-alegria-abraham-reyes',
-      sede: 'Colegio Fe y Alegría Abraham Reyes',
-      tipo: 'Centro Educativo',
-      region: 'Caracas',
-      parroquia: 'Parroquia 23 de Enero',
-      direccion: 'Zona Central, detrás del Bloque 29, Calle Cristo Rey, Parroquia 23 de Enero, Caracas 1030, Distrito Capital',
-      lat: 10.50838,
-      lng: -66.93725,
-      entregados: 184,
-      permisos: 'Verificados'
-    },
-    {
-      id: 'polideportivo-jmv',
-      sede: 'Refugio Polideportivo José María Vargas',
-      tipo: 'Refugio',
-      region: 'La Guaira',
-      parroquia: 'Maiquetía (Parroquia Carlos Soublette)',
-      direccion: 'Avenida Soublette, Parroquia Carlos Soublette, Maiquetía 1161, Estado La Guaira',
-      lat: 10.60013,
-      lng: -66.97062,
-      entregados: 171,
-      permisos: 'Verificados'
-    },
-    {
-      id: 'uen-republica-panama',
-      sede: 'Refugio Colegio UEN República de Panamá',
-      tipo: 'Refugio / Centro Educativo',
-      region: 'La Guaira',
-      parroquia: 'La Guaira',
-      direccion: 'Sector Avenida Soublette del Cardonal, frente a la Av. Soublette, La Guaira 1160, Estado La Guaira',
-      lat: 10.60188,
-      lng: -66.92612,
-      entregados: 129,
-      permisos: 'Verificados'
-    },
-    {
-      id: 'iglesia-universal-lg',
-      sede: 'Refugio Iglesia Universal',
-      tipo: 'Refugio',
-      region: 'La Guaira',
-      parroquia: 'Maiquetía / La Guaira',
-      direccion: 'Calle San Sebastián esquina Calle Navarrete, Maiquetía 1161, Estado La Guaira',
-      lat: 10.59425,
-      lng: -66.9525,
-      entregados: 25,
-      permisos: 'Verificados'
-    },
-    {
-      id: 'club-campo-golf',
-      sede: 'Refugio Club Campo de Golf',
-      tipo: 'Refugio',
-      region: 'La Guaira',
-      parroquia: 'Caraballeda',
-      direccion: 'Avenida José María España / Avenida Charama, Urbanización Caraballeda 1165, Estado La Guaira',
-      lat: 10.61375,
-      lng: -66.8415,
-      entregados: 91,
-      permisos: 'Verificados'
-    }
-  ],
+  {
+    "id": "fe-alegria-abraham-reyes",
+    "sede": "Colegio Fe y Alegría Abraham Reyes",
+    "tipo": "Centro Educativo",
+    "region": "Caracas",
+    "parroquia": "Parroquia 23 de Enero",
+    "direccion": "Zona Central, detrás del Bloque 29, Calle Cristo Rey, Parroquia 23 de Enero, Caracas 1030, Distrito Capital",
+    "lat": 10.50838,
+    "lng": -66.93725,
+    "entregados": 184,
+    "permisos": "Verificados",
+    "fecha_iso": "2026-10-08",
+    "fecha_entrega": "Jueves 08 oct 2026"
+  },
+  {
+    "id": "polideportivo-jmv",
+    "sede": "Refugio Polideportivo José María Vargas",
+    "tipo": "Refugio",
+    "region": "La Guaira",
+    "parroquia": "Maiquetía (Parroquia Carlos Soublette)",
+    "direccion": "Avenida Soublette, Parroquia Carlos Soublette, Maiquetía 1161, Estado La Guaira",
+    "lat": 10.60013,
+    "lng": -66.97062,
+    "entregados": 171,
+    "permisos": "Verificados",
+    "fecha_iso": "2026-10-03",
+    "fecha_entrega": "Sábado 03 oct 2026"
+  },
+  {
+    "id": "uen-republica-panama",
+    "sede": "Refugio Colegio UEN República de Panamá",
+    "tipo": "Refugio / Centro Educativo",
+    "region": "La Guaira",
+    "parroquia": "La Guaira",
+    "direccion": "Sector Avenida Soublette del Cardonal, frente a la Av. Soublette, La Guaira 1160, Estado La Guaira",
+    "lat": 10.60188,
+    "lng": -66.92612,
+    "entregados": 129,
+    "permisos": "Verificados",
+    "fecha_iso": "2026-10-03",
+    "fecha_entrega": "Sábado 03 oct 2026"
+  },
+  {
+    "id": "iglesia-universal-lg",
+    "sede": "Refugio Iglesia Universal",
+    "tipo": "Refugio",
+    "region": "La Guaira",
+    "parroquia": "Maiquetía / La Guaira",
+    "direccion": "Calle San Sebastián esquina Calle Navarrete, Maiquetía 1161, Estado La Guaira",
+    "lat": 10.59425,
+    "lng": -66.9525,
+    "entregados": 25,
+    "permisos": "Verificados",
+    "fecha_iso": "2026-10-03",
+    "fecha_entrega": "Sábado 03 oct 2026"
+  },
+  {
+    "id": "club-campo-golf",
+    "sede": "Refugio Club Campo de Golf",
+    "tipo": "Refugio",
+    "region": "La Guaira",
+    "parroquia": "Caraballeda",
+    "direccion": "Avenida José María España / Avenida Charama, Urbanización Caraballeda 1165, Estado La Guaira",
+    "lat": 10.61375,
+    "lng": -66.8415,
+    "entregados": 91,
+    "permisos": "Verificados",
+    "fecha_iso": "2026-11-14",
+    "fecha_entrega": "Sábado 14 nov 2026"
+  }
+],
+  kit_contenido: [{"cantidad": "1", "item": "Bloc de dibujo", "detalle": "20 hojas blancas"}, {"cantidad": "12", "item": "Lápices de colores", "detalle": "En su caja (7.200 en total)"}, {"cantidad": "4", "item": "Lápices HB", "detalle": "2.400 en total"}, {"cantidad": "1", "item": "Sacapuntas", "detalle": "630 adquiridos para el ciclo"}, {"cantidad": "1", "item": "Borrador", "detalle": "600 entregados"}, {"cantidad": "1", "item": "Cartuchera", "detalle": "Producción local en Venezuela"}, {"cantidad": "1", "item": "Bolsa", "detalle": "Kit organizado"}, {"cantidad": "1", "item": "Invitación QR", "detalle": "Única y voluntaria (~50 págs. recortadas)"}],
+  linea_tiempo: [{"fecha": "Julio 2026", "titulo": "Diseño y planificación", "detalle": "La propuesta inicial se ajustó hasta una meta realizable de 600 kits.", "estado": "completado"}, {"fecha": "Agosto 2026", "titulo": "Adquisición y fabricación local", "detalle": "Se adquirieron los materiales y comenzó la producción local de 600 cartucheras reutilizables.", "estado": "completado"}, {"fecha": "Septiembre 2026", "titulo": "Armado y sistema QR en UCV", "detalle": "Se verificaron insumos, se imprimieron y cortaron 600 códigos QR y se armaron los primeros 350 kits en la Facultad de Ciencias.", "estado": "completado"}, {"fecha": "Octubre 2026", "titulo": "600 armados · 509 entregados", "detalle": "Con los 250 blocs finales se completó el lote; dos jornadas entregaron 325 kits en La Guaira (3 oct) y 184 en Caracas (8 oct).", "estado": "completado"}, {"fecha": "14 Nov 2026", "titulo": "Meta completa (600 / 600)", "detalle": "Los 91 kits finales llegaron a Caraballeda (refugio del Campo de Golf), cerrando con cero pendientes.", "estado": "completado"}, {"fecha": "30 Nov 2026", "titulo": "Cierre de concurso y 10 kits ampliados", "detalle": "Selección de 10 dibujos (sin primer ni último lugar) para recibir 10 kits ampliados y preparar el segundo ciclo.", "estado": "proximo"}],
+  operacion_nova: {"equipo": "NOVA · Movimiento Estudiantil UCV (Facultad de Ciencias y Escuela de Física)", "pasos": [{"num": "01", "titulo": "Recibir y verificar", "detalle": "Contar cajas, lápices, blocs, cartucheras, borradores, sacapuntas y bolsas."}, {"num": "02", "titulo": "Preparar 600 QR", "detalle": "Imprimir unas 50 páginas, cortar cada código y mantener su carácter único."}, {"num": "03", "titulo": "Armar 600 kits", "detalle": "Organizar materiales, colocar la invitación QR y conciliar cada lote."}, {"num": "04", "titulo": "Transportar y entregar", "detalle": "Coordinar espacios, movilizar los lotes y acompañar las 3 jornadas."}]},
+  privacidad_qr: ["Participar nunca fue una condición para recibir el kit.", "No se solicitan apellidos, escuela, dirección, documento ni fecha de nacimiento del niño.", "La persona adulta puede tomar la foto en el momento o cargar una imagen existente.", "Cada QR permite un solo envío y la publicación requiere una autorización separada."],
   galeria_ilustrada: [
   {
     "archivo": "./assets/ilustraciones/armado_mesa_qr.jpg",
@@ -184,6 +198,10 @@ const DRAWINGS = [
 let OPERATIONS_HUB = FALLBACK_DATA.centro_operaciones;
 let SITES_DATA = FALLBACK_DATA.sedes_entrega;
 let GALLERY_DATA = FALLBACK_DATA.galeria_ilustrada;
+let KIT_CONTENIDO = FALLBACK_DATA.kit_contenido;
+let LINEA_TIEMPO = FALLBACK_DATA.linea_tiempo;
+let OPERACION_NOVA = FALLBACK_DATA.operacion_nova;
+let PRIVACIDAD_QR = FALLBACK_DATA.privacidad_qr;
 
 let state = {
   activeTab: 'public',
@@ -253,6 +271,51 @@ function focusMapOnSite(siteId) {
   }
 }
 
+
+function renderInformExtras() {
+  const kitEl = document.getElementById('kitContentsGrid');
+  if (kitEl) {
+    kitEl.innerHTML = KIT_CONTENIDO.map(k => `
+      <div class="p-3 rounded-xl border border-slate-200 bg-slate-50">
+        <span class="text-xl font-extrabold text-teal-700">${k.cantidad}</span>
+        <p class="text-xs font-bold text-slate-900 mt-0.5">${k.item}</p>
+        <p class="text-[11px] text-slate-500">${k.detalle}</p>
+      </div>
+    `).join('');
+  }
+
+  const tlEl = document.getElementById('timelineList');
+  if (tlEl) {
+    tlEl.innerHTML = LINEA_TIEMPO.map(t => {
+      const isNext = t.estado === 'proximo';
+      return `
+        <li class="ml-5">
+          <span class="absolute -left-2.5 mt-1 w-4 h-4 rounded-full border-2 border-white ${isNext ? 'bg-amber-500' : 'bg-teal-600'}"></span>
+          <span class="text-[11px] font-bold uppercase tracking-wide ${isNext ? 'text-amber-700' : 'text-teal-700'}">${t.fecha}</span>
+          <h3 class="text-xs sm:text-sm font-bold text-slate-900">${t.titulo}</h3>
+          <p class="text-xs text-slate-600 mt-0.5">${t.detalle}</p>
+        </li>
+      `;
+    }).join('');
+  }
+
+  const novaEl = document.getElementById('novaStepsGrid');
+  if (novaEl) {
+    novaEl.innerHTML = OPERACION_NOVA.pasos.map(p => `
+      <div class="p-3 rounded-xl border border-slate-200 bg-slate-50">
+        <span class="text-[11px] font-extrabold text-indigo-600">${p.num}</span>
+        <p class="text-xs font-bold text-slate-900">${p.titulo}</p>
+        <p class="text-[11px] text-slate-600 mt-0.5">${p.detalle}</p>
+      </div>
+    `).join('');
+  }
+
+  const qrEl = document.getElementById('qrPrivacyList');
+  if (qrEl) {
+    qrEl.innerHTML = PRIVACIDAD_QR.map(item => `<li>${item}</li>`).join('');
+  }
+}
+
 function renderGallery() {
   const grid = document.getElementById('galleryGrid');
   grid.innerHTML = GALLERY_DATA.map(item => `
@@ -290,6 +353,7 @@ function renderPublic() {
         <div class="text-[11px] font-normal text-slate-500">${s.tipo} · ${s.parroquia}</div>
       </td>
       <td class="px-4 py-3 text-slate-700 font-medium">${s.region}</td>
+      <td class="px-4 py-3 text-xs font-semibold text-slate-700 whitespace-nowrap">${s.fecha_entrega || ""}</td>
       <td class="px-4 py-3 text-xs text-slate-600 max-w-xs">${s.direccion}</td>
       <td class="px-4 py-3 text-right font-bold text-teal-700">${s.entregados}</td>
       <td class="px-4 py-3 text-right font-medium text-slate-700">${((s.entregados / 600) * 100).toFixed(1)}%</td>
@@ -303,7 +367,7 @@ function renderPublic() {
 
   document.getElementById('tableFoot').innerHTML = `
     <tr>
-      <td class="px-4 py-3" colspan="3">Total Entregado (${state.regionFilter}) — Armado 100% en Fac. Ciencias UCV</td>
+      <td class="px-4 py-3" colspan="4">Total Entregado (${state.regionFilter}) — Armado 100% en Fac. Ciencias UCV</td>
       <td class="px-4 py-3 text-right text-teal-700">${entregados}</td>
       <td class="px-4 py-3 text-right">${pctOfTotal}%</td>
       <td class="px-4 py-3 text-xs text-emerald-700">Saldo: 0</td>
@@ -376,6 +440,7 @@ function renderPublic() {
       <div style="min-width:210px">
         <span style="display:inline-block;padding:2px 6px;border-radius:4px;background:#ccfbf1;color:#115e59;font-size:10px;font-weight:700;margin-bottom:4px">${s.tipo.toUpperCase()} · ${s.region.toUpperCase()}</span><br/>
         <strong>${s.sede}</strong><br/>
+        <span style="font-size:11px;font-weight:600;color:#0f766e">Entrega: ${s.fecha_entrega || ""}</span><br/>
         <span style="font-size:11px;color:#475569">${s.direccion}</span><br/>
         <hr style="margin:6px 0;border-color:#e2e8f0"/>
         <span style="font-size:12px"><strong>Entregados:</strong> ${s.entregados} kits (${((s.entregados / 600) * 100).toFixed(1)}%)</span><br/>
@@ -531,8 +596,8 @@ document.getElementById('btnSaveVote').addEventListener('click', () => {
 
 document.getElementById('btnExportCSV').addEventListener('click', () => {
   const sites = getFilteredSites();
-  const header = 'sede,tipo,region,parroquia,direccion,kits_entregados,porcentaje_total,centro_armado,permisos\n';
-  const rows = sites.map(s => `"${s.sede}","${s.tipo}","${s.region}","${s.parroquia}","${s.direccion}",${s.entregados},${((s.entregados / 600) * 100).toFixed(1)},"Facultad de Ciencias UCV","${s.permisos}"`).join('\n');
+  const header = 'sede,tipo,region,parroquia,fecha_entrega,fecha_iso,direccion,kits_entregados,porcentaje_total,centro_armado,permisos\n';
+  const rows = sites.map(s => `"${s.sede}","${s.tipo}","${s.region}","${s.parroquia}","${s.fecha_entrega || ""}","${s.fecha_iso || ""}","${s.direccion}",${s.entregados},${((s.entregados / 600) * 100).toFixed(1)},"Facultad de Ciencias UCV","${s.permisos}"`).join('\n');
   downloadFile('entregas_600_kits_ucv_ccvzla.csv', header + rows, 'text/csv;charset=utf-8;');
   showToast('CSV público descargado con las sedes verificadas.');
 });
@@ -576,11 +641,16 @@ window.addEventListener('DOMContentLoaded', async () => {
       if (data.centro_operaciones) OPERATIONS_HUB = data.centro_operaciones;
       if (data.sedes_entrega) SITES_DATA = data.sedes_entrega;
       if (data.galeria_ilustrada) GALLERY_DATA = data.galeria_ilustrada;
+      if (data.kit_contenido) KIT_CONTENIDO = data.kit_contenido;
+      if (data.linea_tiempo) LINEA_TIEMPO = data.linea_tiempo;
+      if (data.operacion_nova) OPERACION_NOVA = data.operacion_nova;
+      if (data.privacidad_qr) PRIVACIDAD_QR = data.privacidad_qr;
     }
   } catch (e) {
     // Fallback local si se abre sin servidor HTTP
   }
   renderPublic();
+  renderInformExtras();
   renderGallery();
   loadSelectedDrawingToForm();
 });
